@@ -23,6 +23,6 @@ app.use('/api/contact', contactRoute);
 app.use('/api/checkout', checkoutRoute);  // ✅ These must come BEFORE app.listen()
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`✅ Server running on port ${PORT}`);
 });
 
