@@ -11,10 +11,11 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware
 app.use(cors({
-  origin: 'https://watchcollection001.netlify.app', // replace with your Netlify domain
-  methods: ['GET', 'POST'],
+  origin: 'https://watchcollection001.netlify.app', // ✅ your Netlify domain
+  methods: ['POST'],
   credentials: true
 }));
+
 
 app.use(express.json());
 
