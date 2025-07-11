@@ -10,14 +10,19 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: 'https://watchcollection001.netlify.app', // replace with your Netlify domain
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Routes
 app.use('/api/contact', contactRoute);
-app.use('/api/checkout', checkoutRoute);  // ✅ Moved before app.listen
+app.use('/api/checkout', checkoutRoute);  // ✅ These must come BEFORE app.listen()
 
-// Start the server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
